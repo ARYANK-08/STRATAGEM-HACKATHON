@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+
+    <link rel="stylesheet" href="{{ url_for('static' , filename='css/h1.css') }}">
+
+  <link rel="stylesheet" href="{{ url_for('static' , filename='css/style.css') }}" >
+  <title> Hare Krishna!! </title>
+
+  <header class="header">
+
+    <a href="#" class="logo"> <i class="fas fa-heartbeat"></i> <strong>Tanjiro </strong> Hospital </a>
+
+    <nav class="navbar">
+        <a href="/">home</a>
+        <a href="/chat">about</a>
+        <a href="#services">services</a>
+        <a href="/sign-up">SignUp</a>
+        <a href="/login">Login</a>
+        <a href="/index3">Face Recognition</a>
+
+    </nav>
+
+    <div id="menu-btn" class="fas fa-bars"></div>
+
+</header>
+</head>
+<body>
+  
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+<br/>
+
+  <br/>
+<br/>
+  <div class= "main" >
+  <h1>Upload a file</h1>
+  <div class="row gx-4 gx-lg-5 justify-content-center">
+    <form action="/upload" enctype="multipart/form-data" method="POST"> 
+      <input type="file" name="pic" />
+      <input type="submit" value="Upload a file"/>
+   </form>
+   
+      <form action="/uploader" method="post" enctype="multipart/form-data">
+          <input type="file" class="button" name="file1">
+          <br>
+          <button type="submit" class="button">Submit</button>
+      </form>
+  </div>
+            <hr>
+    <h1> Patient Face Recognition </h1>
+    <img id="bg" src="{{  url_for('video_feed')  }}" class="center">
+  </div>
+   </div>
+</body>
+</html>
+  
+  
