@@ -113,3 +113,31 @@ def get_img(filename):
         return 'Img Not Found!', 404
 
     return Response(img.img, mimetype=img.mimetype)
+    
+
+@auth.route("/user_profile/<string:filename>" , methods=['GET', 'POST'])
+def dashboard(filename):
+
+    post = Info.query.filter_by(filename=filename).first()
+    age = math.trunc(post.age)
+    mobileno = math.trunc(post.mobileno)
+    date = post.date
+    date = datetime.strptime(date, '%Y-%m-%d %H:%M:%S.%f')
+    date = date.strftime("%d-%b-%Y %I.%M %p")
+    
+
+    return render_template("user_profile.html", post=post, age = age, mobileno=mobileno, date=date)
+
+
+
+@auth.route("/temp",methods=['GET', 'POST'])
+def temp():
+    filename = 'ash.png'
+    return render_template("temp.html", filename = filename)
+
+@auth.route('/download')
+def download():
+    name = 'aryan.png'
+    post = Info.query.filter_by(filename=name).first()
+    return send_file(BytesIO(post.img), attachment_filname=post.filename, as_attachment=True)
+ 
