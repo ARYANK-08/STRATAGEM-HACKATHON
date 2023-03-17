@@ -136,39 +136,49 @@ def gen3(test4):
 def video_feed3():
      return Response(gen3(VideoCamera()),
          mimetype='multipart/x-mixed-replace; boundary=frame')
-
-@app.route("/uploader" , methods=['GET', 'POST'])
-def uploader():
-   
-    if request.method=='POST':
-        f = request.files['file1']
-        f.save(os.path.join(app.config['UPLOAD_FOLDER'], secure_filename(f.filename)))
-        return "Uploaded successfully!"
     
-@app.route('/upload',  methods=['GET', 'POST'])
+
+@app.route('/register')
+def hello_world():
+    return render_template("register.html")
+
+
+@app.route('/upload', methods=['POST'])
 def upload():
-    pic = request.files['pic']
-    if not pic:
-        return 'No pic uploaded!', 400
+    if(request.method=='POST'):
+        '''Add entry to the database'''
+        name = request.form.get('name')
+        email = request.form.get('email')
+        age = request.form.get('age')
+        mobileno = request.form.get('mobileno')
+        blood = request.form.get('blood')
+        date = datetime.now()
+        pic = request.files['pic']
+        if not pic:
+            return 'No pic uploaded!', 400
 
-    filename = secure_filename(pic.filename)
-    mimetype = pic.mimetype
-    if not filename or not mimetype:
-        return 'Bad upload!', 400
+        filename = secure_filename(pic.filename)
+        mimetype = pic.mimetype
+        if not filename or not mimetype:
+            return 'Bad upload!', 400
 
-    img = Img(img=pic.read(), name=filename, mimetype=mimetype)
-    db.session.add(img)
-    db.session.commit()
+        img = Info(name=name, mobileno = mobileno, age=age, blood = blood ,email = email,img=pic.read(), filename=filename, mimetype=mimetype, date = date)
+        db.session.add(img)
+        db.session.commit()
+        readBlobData(filename)
+    
+
 
     return 'Img Uploaded!', 200
 
+# @app.route('/temp', methods=['GET', 'POST'])
+# def temp():
+#     name1 = 'aryan.png'
+#     return render_template("temp.html", name1 = name1)
 
-
-
-
-@app.route('/<int:id>')
-def get_img(id):
-    img = Img.query.filter_by(id=id).first()
+@app.route('/<string:filename>')
+def get_img(filename):
+    img = Info.query.filter_by(filename=filename).first()
     if not img:
         return 'Img Not Found!', 404
 
