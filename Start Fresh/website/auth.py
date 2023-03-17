@@ -1,9 +1,12 @@
-from flask import Blueprint, render_template, request, flash, redirect, url_for
+from flask import Blueprint, render_template, request, flash, redirect, url_for ,Response
 from .models import User
 from werkzeug.security import generate_password_hash, check_password_hash
 from . import db   ##means from __init__.py import db
 from flask_login import login_user, login_required, logout_user, current_user
-
+from datetime import datetime
+from werkzeug.utils import secure_filename
+from demo import *
+from .models import Info
 
 auth = Blueprint('auth', __name__)
 
@@ -64,3 +67,49 @@ def sign_up():
             return redirect(url_for('views.home'))
 
     return render_template("sign_up.html", user=current_user)
+
+@auth.route('/register')
+def hello_world():
+    return render_template("register.html")
+
+
+@auth.route('/upload', methods=['POST'])
+def upload():
+    if(request.method=='POST'):
+        '''Add entry to the database'''
+        name = request.form.get('name')
+        email = request.form.get('email')
+        age = request.form.get('age')
+        mobileno = request.form.get('mobileno')
+        blood = request.form.get('blood')
+        date = datetime.now()
+        pic = request.files['pic']
+        if not pic:
+            return 'No pic uploaded!', 400
+
+        filename = secure_filename(pic.filename)
+        mimetype = pic.mimetype
+        if not filename or not mimetype:
+            return 'Bad upload!', 400
+
+        img = Info(name=name, mobileno = mobileno, age=age, blood = blood ,email = email,img=pic.read(), filename=filename, mimetype=mimetype, date = date)
+        db.session.add(img)
+        db.session.commit()
+        readBlobData(filename)
+    
+
+
+    return 'Img Uploaded!', 200
+
+# @app.route('/temp', methods=['GET', 'POST'])
+# def temp():
+#     name1 = 'aryan.png'
+#     return render_template("temp.html", name1 = name1)
+
+@auth.route('/<string:filename>')
+def get_img(filename):
+    img = Info.query.filter_by(filename=filename).first()
+    if not img:
+        return 'Img Not Found!', 404
+
+    return Response(img.img, mimetype=img.mimetype)
