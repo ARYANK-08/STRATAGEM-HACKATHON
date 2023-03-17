@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MY APP</title>
+</head>
+<body>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
+<form action="http://localhost:5000/upload" enctype="multipart/form-data" method="POST"> 
+  
+  <h3>make appointment</h3>
+  <input type="text"name="name" placeholder="your name" class="box">
+
+  <input type="email"name="email" placeholder="your email" class="box">
+
+  <input type="number"name="age" placeholder="your Age" class="box">
+
+  <input type="number"name="mobileno" placeholder="your number" class="box">
+
+  <input type="text"name="blood" placeholder="Blood Group" class="box">
+
+ 
+  <div id="menu-btn" class="fas fa-bars"></div> 
+  
+  <input type="file" name="pic" />
+   <input type="submit" value="Upload a file"/>
+</form>
+
+
+<script src="js/script.js"></script>
+ 
+</body>
+</html>
