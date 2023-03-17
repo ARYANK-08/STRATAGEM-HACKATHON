@@ -8,7 +8,7 @@ def writeTofile(data, filename):
 
 def readBlobData(filename):
     try:
-        sqliteConnection = sqlite3.connect(r'C:\\Users\\sharv\\Downloads\\Upload (1)\\done\\instance\\info.db')
+        sqliteConnection = sqlite3.connect(r'C:\\Users\\kyath\\OneDrive\\Desktop\\STRATAGEM\\STRATAGEM-HACKATHON-main\\Start Fresh\\instance\\info.db')
         cursor = sqliteConnection.cursor()
         print("Connected to SQLite")
 
@@ -22,7 +22,7 @@ def readBlobData(filename):
             # resumeFile = row[3]
 
             print("Storing employee image and resume on disk \n")
-            photoPath = r"C:\\Users\\sharv\\Downloads\\Upload (1)\\done\\img\\" + filename
+            photoPath = r"C:\\Users\\kyath\\OneDrive\\Desktop\\STRATAGEM\\STRATAGEM-HACKATHON-main\\Start Fresh\\images" + filename
             # resumePath = "E:\pynative\Python\photos\db_data\\" + name + "_resume.txt"
             writeTofile(photo, photoPath)
             # writeTofile(resumeFile, resumePath)
@@ -39,4 +39,3 @@ def readBlobData(filename):
 # readBlobData(1)
 # readBlobData(2)
 # readBlobData(3)
-
