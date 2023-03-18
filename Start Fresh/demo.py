@@ -22,7 +22,7 @@ def readBlobData(filename):
             # resumeFile = row[3]
 
             print("Storing employee image and resume on disk \n")
-            photoPath = r"C:\\Users\\kyath\\OneDrive\\Desktop\\STRATAGEM\\STRATAGEM-HACKATHON-main\\Start Fresh\\images" + filename
+            photoPath = r"C:\\Users\\kyath\\OneDrive\\Desktop\\STRATAGEM\\STRATAGEM-HACKATHON-main\\Start Fresh\\website\\static\\images\\" + filename
             # resumePath = "E:\pynative\Python\photos\db_data\\" + name + "_resume.txt"
             writeTofile(photo, photoPath)
             # writeTofile(resumeFile, resumePath)

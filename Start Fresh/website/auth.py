@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, flash, redirect, url_for ,Response
+from flask import Blueprint, render_template, request, flash, redirect, url_for ,Response,send_file
 from .models import User
 from werkzeug.security import generate_password_hash, check_password_hash
 from . import db   ##means from __init__.py import db
@@ -7,8 +7,15 @@ from datetime import datetime
 from werkzeug.utils import secure_filename
 from demo import *
 from .models import Info
+from io import BytesIO
+import math
+from test4 import VideoCamera
+import stripe 
+from flask import Flask, redirect
+
 
 auth = Blueprint('auth', __name__)
+
 
 
 @auth.route('/login', methods=['GET', 'POST'])
@@ -132,7 +139,9 @@ def dashboard(filename):
 
 @auth.route("/temp",methods=['GET', 'POST'])
 def temp():
-    filename = 'ash.png'
+    
+    filename = 'Elon_Musk.jpg'
+    print(VideoCamera.name1)
     return render_template("temp.html", filename = filename)
 
 @auth.route('/download')
@@ -140,4 +149,6 @@ def download():
     name = 'aryan.png'
     post = Info.query.filter_by(filename=name).first()
     return send_file(BytesIO(post.img), attachment_filname=post.filename, as_attachment=True)
+
+
  
