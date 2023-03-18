@@ -1,0 +1,57 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Form</title>
+	<link href="{{ url_for('static', filename='css/style_s.css') }}" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<img class="wave" src="{{ url_for('static', filename='/admin_image/3.png') }}">
+<div class="container">
+		<div class="img">
+			<img src="{{ url_for('static', filename='/admin_image/bg.svg') }}">
+		</div>
+	<div class="login-content">
+		<form action="/admin" method="post">
+			
+			<!-- Taking image from config.json -->
+			<img src="{{ url_for('static', filename='/admin_image/avatar.svg') }}">
+		
+
+      		<h3>Admin Login</h3>
+
+			<div class="input-div one">
+				<div class="i">
+					<i class="fas fa-user"></i>
+				</div>
+				<div class="div">
+					<input type="text" name="uname" required placeholder="enter your username">
+				</div>
+			</div>
+			
+			<div class="input-div pass">
+				<div class="i"> 
+					<i class="fas fa-lock"></i>
+				</div>
+				<div class="div">
+					<input type="password" name="pass" required placeholder="enter your password">
+				</div>
+			</div>
+			<input type="submit" name="submit" value="login now" class="form-btn">
+			<!-- <p>don't have an account? <a href="register1.php">register now</a></p> -->
+   		</form>
+		
+		<!-- <div class="login-content">
+			
+        </div> -->
+	</div>
+    </div>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
+
+
