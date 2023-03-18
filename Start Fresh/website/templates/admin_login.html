@@ -4,22 +4,22 @@
 <html>
 <head>
 	<title>Login Form</title>
-	<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
+	<link href="{{ url_for('static', filename='css/style_s.css') }}" rel="stylesheet" />
 	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-	<img class="wave" src="{{ url_for('static', filename='/images/3.png') }}">
+	<img class="wave" src="{{ url_for('static', filename='/admin_image/3.png') }}">
 <div class="container">
 		<div class="img">
-			<img src="{{ url_for('static', filename='/images/bg.svg') }}">
+			<img src="{{ url_for('static', filename='/admin_image/bg.svg') }}">
 		</div>
 	<div class="login-content">
 		<form action="/admin" method="post">
 			
 			<!-- Taking image from config.json -->
-
+			<img src="{{ url_for('static', filename='/admin_image/avatar.svg') }}">
 		
 
       		<h3>Admin Login</h3>
