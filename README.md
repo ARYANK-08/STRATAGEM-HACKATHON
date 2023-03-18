@@ -7,10 +7,20 @@ hospital. On arriving at the hospital our camera will be able to detect the
 patient and match with the image provided while booking the
 appointment to see if the right patient is present and the admin can access
 the data of the patient. This has proven to be hassle free and time efficient.
+
+
 ⚪Features:
+
+
 ➡ Face Recognition
+
+
 ➡ Book Appointment Online
+
+
 ➡ Chat 24/7
+
+
 ➡ Payment Gateway
 
 
