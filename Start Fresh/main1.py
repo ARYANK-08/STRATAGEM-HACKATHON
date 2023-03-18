@@ -8,8 +8,10 @@ from test4 import VideoCamera
 import os
 from werkzeug.utils import secure_filename
 from website import create_app
-from models import Img
-from db import db_init, db
+
+from datetime import datetime
+from demo import *
+
 app=create_app()
 
 
@@ -113,11 +115,11 @@ def disconnect():
 
 
 
-#upload image to this folder :
-app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///img.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+# #upload image to this folder :
+# app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///img.db'
+# app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-app.config['UPLOAD_FOLDER'] = "C:\\Users\\kyath\\OneDrive\\Desktop\\STRATAGEM\\Start Fresh\\Start Fresh\\images"
+# app.config['UPLOAD_FOLDER'] = "C:\\Users\\kyath\\OneDrive\\Desktop\\STRATAGEM\\Start Fresh\\Start Fresh\\images"
 
 @app.route('/index3')
 
@@ -138,51 +140,51 @@ def video_feed3():
          mimetype='multipart/x-mixed-replace; boundary=frame')
     
 
-@app.route('/register')
-def hello_world():
-    return render_template("register.html")
+# @app.route('/register')
+# def hello_world():
+#     return render_template("register.html")
 
 
-@app.route('/upload', methods=['POST'])
-def upload():
-    if(request.method=='POST'):
-        '''Add entry to the database'''
-        name = request.form.get('name')
-        email = request.form.get('email')
-        age = request.form.get('age')
-        mobileno = request.form.get('mobileno')
-        blood = request.form.get('blood')
-        date = datetime.now()
-        pic = request.files['pic']
-        if not pic:
-            return 'No pic uploaded!', 400
+# @app.route('/upload', methods=['POST'])
+# def upload():
+#     if(request.method=='POST'):
+#         '''Add entry to the database'''
+#         name = request.form.get('name')
+#         email = request.form.get('email')
+#         age = request.form.get('age')
+#         mobileno = request.form.get('mobileno')
+#         blood = request.form.get('blood')
+#         date = datetime.now()
+#         pic = request.files['pic']
+#         if not pic:
+#             return 'No pic uploaded!', 400
 
-        filename = secure_filename(pic.filename)
-        mimetype = pic.mimetype
-        if not filename or not mimetype:
-            return 'Bad upload!', 400
+#         filename = secure_filename(pic.filename)
+#         mimetype = pic.mimetype
+#         if not filename or not mimetype:
+#             return 'Bad upload!', 400
 
-        img = Info(name=name, mobileno = mobileno, age=age, blood = blood ,email = email,img=pic.read(), filename=filename, mimetype=mimetype, date = date)
-        db.session.add(img)
-        db.session.commit()
-        readBlobData(filename)
+#         img = Info(name=name, mobileno = mobileno, age=age, blood = blood ,email = email,img=pic.read(), filename=filename, mimetype=mimetype, date = date)
+#         db.session.add(img)
+#         db.session.commit()
+#         readBlobData(filename)
     
 
 
-    return 'Img Uploaded!', 200
+#     return 'Img Uploaded!', 200
 
-# @app.route('/temp', methods=['GET', 'POST'])
-# def temp():
-#     name1 = 'aryan.png'
-#     return render_template("temp.html", name1 = name1)
+# # @app.route('/temp', methods=['GET', 'POST'])
+# # def temp():
+# #     name1 = 'aryan.png'
+# #     return render_template("temp.html", name1 = name1)
 
-@app.route('/<string:filename>')
-def get_img(filename):
-    img = Info.query.filter_by(filename=filename).first()
-    if not img:
-        return 'Img Not Found!', 404
+# @app.route('/<string:filename>')
+# def get_img(filename):
+#     img = Info.query.filter_by(filename=filename).first()
+#     if not img:
+#         return 'Img Not Found!', 404
 
-    return Response(img.img, mimetype=img.mimetype)
+#     return Response(img.img, mimetype=img.mimetype)
 
 
 if __name__ == '__main__' :

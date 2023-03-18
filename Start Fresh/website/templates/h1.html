@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <!-- custom css file link  -->
+    <link rel="stylesheet" href="{{ url_for('static' , filename='css/style.css') }}">
 
     <link rel="stylesheet" href="{{ url_for('static' , filename='css/h1.css') }}">
 
@@ -22,11 +23,11 @@
 
 <header class="header">
 
-    <a href="#" class="logo"> <i class="fas fa-heartbeat"></i> <strong>WC</strong>medical </a>
+    <a href="#" class="logo"> <i class="fas fa-heartbeat"></i> <strong>Tanjiro</strong> Hospital </a>
 
     <nav class="navbar">
         <a href="#home">home</a>
-        <a href="#about">about</a>
+        <a href="/chat">Chat</a>
         <a href="#services">services</a>
         <a href="/sign-up">SignUp</a>
         <a href="/login">Login</a>
@@ -43,24 +44,110 @@
 <!-- home section starts  -->
 
 <section class="home" id="home">
+    <div class="hero">
 
-    <div class="image">
-        <img src="static/images/home-img.svg">
+      
+    <div class="hero">
+        <style>
         
+        
+        </style>
     </div>
 
-    <div class="content">
-        <h3>Care</h5>
-        <h4>Care</h4>
-        <h5>Care</h5>
-        <p> A person who has good physical health is likely to have bodily functions and processes working at their peak.</p>
-        <a href="#appointment" class="btn"> appointment us <span class="fas fa-chevron-right"></span> </a>
+    <div text-align=left class="content">
+        <h3>Care</h3>
+        <h3>Precision</h3>
+        <h3>Quality</h3>
+        
+        <a href="/login" class="btn"> Book appointment <span class="fas fa-chevron-right"></span> </a>
     </div>
 
 </section>
 
 
 <!-- home section ends -->
+<!-- services section starts  -->
+
+<section class="services" id="services">
+
+    <h1 class="heading"> our <span>services</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <i class="fas fa-users"></i>
+            <h3>Face Recognition</h3>
+            <p>To avoid long registeration queue hospital uses <strong >Face Recognition </strong>to identify patients.</p>
+            <a href="/chat" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-notes-medical"></i>
+            <h3>Book Appointment</h3>
+            <p>Book appoitnment at ease sitting at home </p>
+            <a href="/login" class="btn"> Login <span class="fas fa-chevron-right"></span> </a>
+        </div>
+
+      
+     
+
+    </div>
+
+</section>
+
+<!-- services section ends -->
+
+
+
+<!-- about section starts  -->
+
+<section class="about" id="about">
+
+    <h1 class="heading"> <span>about</span> us </h1>
+
+    <div class="row">
+
+        <div class="image">
+            <img src="static/css/mg2.jpg">
+
+        </div>
+
+        <div class="content">
+            <h3>take the world's best quality treatment</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure ducimus, quod ex cupiditate ullam in assumenda maiores et culpa odit tempora ipsam qui, quisquam quis facere iste fuga, minus nesciunt.</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus vero ipsam laborum porro voluptates voluptatibus a nihil temporibus deserunt vel?</p>
+            <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- about section ends -->
+<br/>
+<br/>
+
+<br/>
+<section class="about" id="about">
+<br/>
+<div class="Location">
+    <h1 class="heading"> <span>Location</span>
+     </h1>
+     <br/>
+     <br/>
+     <br/>
+     <div class="Location" >
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.19
+60413006154!2d72.825064714587!3d19.055116387099915!2m3!1f0!2f0!3f0!3m2!1i1024!2i
+768!4f13.1!3m3!1m2!1s0x3be7c93e5d13ed89%3A0xc292fcb80177198f!2sHoly%20Family%20Mult
+ispeciality%20Hospital%20Bandra!5e0!3m2!1sen!2sin!4v1679070429715!5m2!1sen!2sin" 
+width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"  referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+<img width= "600" height="450 "src="static/css/hospital.jpeg" > </img>
+</div>
+</div>
+</section>
+
 
 <!-- icons section starts  -->
 
@@ -94,182 +181,13 @@
 
 <!-- icons section ends -->
 
-<!-- about section starts  -->
 
-<section class="about" id="about">
-
-    <h1 class="heading"> <span>about</span> us </h1>
-
-    <div class="row">
-
-        <div class="image">
-            <img src="static/images/about-img.svg">
-
-        </div>
-
-        <div class="content">
-            <h3>take the world's best quality treatment</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure ducimus, quod ex cupiditate ullam in assumenda maiores et culpa odit tempora ipsam qui, quisquam quis facere iste fuga, minus nesciunt.</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus vero ipsam laborum porro voluptates voluptatibus a nihil temporibus deserunt vel?</p>
-            <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
-        </div>
-
-    </div>
-
-</section>
-
-<!-- about section ends -->
-
-<!-- services section starts  -->
-
-<section class="services" id="services">
-
-    <h1 class="heading"> our <span>services</span> </h1>
-
-    <div class="box-container">
-
-        <div class="box">
-            <i class="fas fa-notes-medical"></i>
-            <h3>free checkups</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, omnis.</p>
-            <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
-        </div>
-
-        <div class="box">
-            <i class="fas fa-ambulance"></i>
-            <h3>24/7 ambulance</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, omnis.</p>
-            <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
-        </div>
-
-        <div class="box">
-            <i class="fas fa-user-md"></i>
-            <h3>expert doctors</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, omnis.</p>
-            <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
-        </div>
-
-        <div class="box">
-            <i class="fas fa-pills"></i>
-            <h3>medicines</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, omnis.</p>
-            <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
-        </div>
-
-        <div class="box">
-            <i class="fas fa-procedures"></i>
-            <h3>bed facility</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, omnis.</p>
-            <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
-        </div>
-
-        <div class="box">
-            <i class="fas fa-heartbeat"></i>
-            <h3>total care</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, omnis.</p>
-            <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
-        </div>
-
-    </div>
-
-</section>
-
-<!-- services section ends -->
-
-
-
-<!-- doctors section starts  -->
-
-<section class="doctors" id="doctors">
-
-    <h1 class="heading"> our <span>doctors</span> </h1>
-
-    <div class="box-container">
-
-        <div class="box">
-            
-            <img src="static/images/doc-1.jpg" alt="">
-            <h3>win coder</h3>
-            <span>expert doctor</span>
-            <div class="share">
-            <a href="#" class="fab fa-facebook-f"></a>
-                <a href="#" class="fab fa-twitter"></a>
-                <a href="#" class="fab fa-instagram"></a>
-                <a href="#" class="fab fa-linkedin"></a>
-                
-            </div>
-        </div>
-
-        <div class="box">
-            <img src="static/images/doc-2.jpg" alt="">
-            <h3>win coder</h3>
-            <span>expert doctor</span>
-            <div class="share">
-            <a href="#" class="fab fa-facebook-f"></a>
-                <a href="#" class="fab fa-twitter"></a>
-                <a href="#" class="fab fa-instagram"></a>
-                <a href="#" class="fab fa-linkedin"></a>
-            </div>
-        </div>
-
-        <div class="box">
-            <img src="static/images/doc-3.jpg" alt="">
-            <h3>win coder</h3>
-            <span>expert doctor</span>
-            <div class="share">
-            <a href="#" class="fab fa-facebook-f"></a>
-                <a href="#" class="fab fa-twitter"></a>
-                <a href="#" class="fab fa-instagram"></a>
-                <a href="#" class="fab fa-linkedin"></a>
-            </div>
-        </div>
-
-            <div class="share">
-            <a href="#" class="fab fa-facebook-f"></a>
-                <a href="#" class="fab fa-twitter"></a>
-                <a href="#" class="fab fa-instagram"></a>
-                <a href="#" class="fab fa-linkedin"></a>
-            </div>
-        </div>
-
-    </div>
-
-</section>
 
 <!-- doctors section ends -->
 
 <!-- appointmenting section starts   -->
 
-<section class="appointment" id="appointment">
 
-    <h1 class="heading"> <span>appointment</span> now </h1>    
-
-    <div class="row">
-
-        <div class="image">
-            <img src="image/appointment-img.svg" alt="">
-        </div>
-
-        <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
-        <?php
-            if(isset($message)) {
-                foreach($message as $message) {
-                echo'<p class ="message">'.$message.'</p>';
-            }
-            }
-        ?>
-      
-            <h3>make appointment</h3>
-            <input type="text"name="name" placeholder="your name" class="box">
-            <input type="number"name="number" placeholder="your number" class="box">
-            <input type="email"name="email" placeholder="your email" class="box">
-            <input type="date"name="date" class="box">
-            <input type="submit" name="submit" value="appointment now" class="btn">
-        </form>
-
-    </div>
-
-</section>
 
 
 
