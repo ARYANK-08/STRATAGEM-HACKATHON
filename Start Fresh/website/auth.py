@@ -150,5 +150,35 @@ def download():
     post = Info.query.filter_by(filename=name).first()
     return send_file(BytesIO(post.img), attachment_filname=post.filename, as_attachment=True)
 
+@app.route("/admin", methods=['GET', 'POST'])
+def admin():
+    if "user" in session and session['user']=='shar':
+
+        # posts = Posts.query.all()
+        return render_template("admin.html")
+
+    if request.method=="POST":
+        #REDIRECT TO ADMIN PANEL
+        username = request.form.get('uname')
+        userpass = request.form.get('pass')
+        if username=='shar' and userpass=='1234':
+            # set the session variable
+            session['user']=username
+            # posts = Posts.query.all()
+            name = 'sharvin'
+            flash("you are successfuly logged in")  
+            return render_template("admin.html",name =name)
+        else:
+            flash("Wrong password")
+            return render_template('admin_login.html')
+        
+    else:
+        return render_template("admin_login.html")
+
+@app.route('/logout')
+def logout():
+    session.pop('user')
+    return redirect('/admin')
+
 
  
