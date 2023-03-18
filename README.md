@@ -27,6 +27,8 @@ the data of the patient. This has proven to be hassle free and time efficient.
 ![Screenshot 2023-03-18 061303](https://user-images.githubusercontent.com/120780784/226074049-56619f54-f56a-4863-bfb8-611179517d9d.png)
 ![Screenshot 2023-03-18 144800](https://user-images.githubusercontent.com/120780784/226096851-6706d46d-0155-474a-9430-b95c9a101ce5.png)
 ![Screenshot 2023-03-18 144838](https://user-images.githubusercontent.com/120780784/226097085-d88c9bad-630a-4c06-a819-01994c77532b.png)
+![Screenshot 2023-03-18 144856](https://user-images.githubusercontent.com/120780784/226097235-912fde52-66f1-41d9-b308-54a5bbd7f8ad.png)
+
 ![Screenshot 2023-03-18 145123](https://user-images.githubusercontent.com/120780784/226097093-67a296c7-d1b5-4533-9469-800486d62699.png)
 ![Screenshot 2023-03-18 145038](https://user-images.githubusercontent.com/120780784/226097100-1ee5faa9-7641-4d1b-88a8-8fe060a20cff.png)
 ![Screenshot 2023-03-18 145108](https://user-images.githubusercontent.com/120780784/226097104-fd249fb4-a58b-461b-90a9-26c785d52d45.png)
